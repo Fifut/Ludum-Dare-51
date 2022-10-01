@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/Textures/Paper.jpg" type="Texture" id=1]
+[ext_resource path="res://Scenes/Game/Jail.tscn" type="PackedScene" id=2]
+
+[node name="GameHandler" type="Node2D"]
+
+[node name="Background" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+current = true
+zoom = Vector2( 2, 2 )
+
+[node name="Jail" parent="." instance=ExtResource( 2 )]
+position = Vector2( 0, 424 )
