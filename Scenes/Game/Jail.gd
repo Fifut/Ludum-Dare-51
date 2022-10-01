@@ -20,3 +20,11 @@ func _process(delta):
 
 func _guardStart():
 	PathFollow2D.offset = 0
+
+
+func _on_GuardFrontDoor_body_entered(body):
+	Events.emit_signal("on_guard_front_door", true)
+
+
+func _on_GuardFrontDoor_area_shape_exited(area_rid, area, area_shape_index, local_shape_index):
+	Events.emit_signal("on_guard_front_door", false)

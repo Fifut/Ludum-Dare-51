@@ -10,19 +10,25 @@
 [node name="GameHandler" type="Node2D"]
 
 [node name="Background" type="Sprite" parent="."]
+position = Vector2( -8, 0 )
+scale = Vector2( 1.011, 1.022 )
 texture = ExtResource( 1 )
 centered = false
 
 [node name="Jail" parent="." instance=ExtResource( 2 )]
-position = Vector2( -48, 424 )
+position = Vector2( 0, 272 )
 
 [node name="DiggableWalls" parent="." instance=ExtResource( 4 )]
-position = Vector2( 24, 1336 )
+position = Vector2( 136, 1244 )
 
 [node name="Outside" parent="." instance=ExtResource( 3 )]
-position = Vector2( 816, 2192 )
+position = Vector2( 808, 2160 )
 
 [node name="Player" parent="." instance=ExtResource( 5 )]
-position = Vector2( 528, 1008 )
+position = Vector2( 724, 508 )
 
 [node name="HUD" parent="." instance=ExtResource( 6 )]
+margin_left = 80.0
+margin_top = 152.0
+margin_right = 80.0
+margin_bottom = 152.0

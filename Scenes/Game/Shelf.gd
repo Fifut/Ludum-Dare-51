@@ -35,7 +35,7 @@ func move():
 		var tween = create_tween()
 		tween.set_trans(Tween.TRANS_QUART)
 		tween.set_ease(Tween.EASE_OUT)
-		tween.tween_property(self, "global_position", main_position + Vector2(300, 0), 1.0)
+		tween.tween_property(self, "global_position", main_position + Vector2(350, 0), 1.0)
 		open = true
 
 

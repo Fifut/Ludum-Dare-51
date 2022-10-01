@@ -7,7 +7,7 @@
 extents = Vector2( 144, 40 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 176, 68 )
+extents = Vector2( 168, 68 )
 
 [node name="Shelf" type="StaticBody2D"]
 script = ExtResource( 2 )
@@ -20,7 +20,7 @@ unique_name_in_owner = true
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="IntercatArea"]
-position = Vector2( 0, -20 )
+position = Vector2( 8, -20 )
 shape = SubResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]

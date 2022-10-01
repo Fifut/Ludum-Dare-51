@@ -1,11 +1,12 @@
 extends KinematicBody2D
 
 
-const ACCELERATION = 10
-const DECELERATION = 10
-const SPEED_MAX = 1000
+const ACCELERATION = 100
+const DECELERATION = 300
+const SPEED_MAX = Vector2(1000,1000)
 
-var speed = 0
+var speed = Vector2.ZERO
+var velocity = Vector2.ZERO
 
 
 func _process(delta):
@@ -15,28 +16,44 @@ func _process(delta):
 	
 
 func _direction(delta):
-	
-	var velocity = Vector2.ZERO
-	
+		
 	if Input.is_action_pressed("up"):
-		speed += ACCELERATION
+		speed.y -= ACCELERATION
 
 	elif Input.is_action_pressed("down"):
-		speed -= DECELERATION
+		speed.y += DECELERATION
+		
+	else:
+		speed.y = 0
+		
+	if Input.is_action_pressed("right"):
+		speed.x += ACCELERATION
 
-	elif speed > 0:
-		speed -= DECELERATION/2
+	elif Input.is_action_pressed("left"):
+		speed.x -= ACCELERATION
+	
+	else:
+		speed.x = 0
+
+#	elif speed > 0:
+#		speed -= DECELERATION/2
+#
+#	elif speed < 0:
+#		speed += DECELERATION/2
 		
-	elif speed < 0:
-		speed += DECELERATION/2
+		
+	if speed.y > SPEED_MAX.y:
+		speed.y = SPEED_MAX.y
+		
+	elif speed.y < -SPEED_MAX.y:
+		speed.y = -SPEED_MAX.y
+		
+	if speed.x > SPEED_MAX.x:
+		speed.x = SPEED_MAX.x
+		
+	elif speed.x < -SPEED_MAX.x:
+		speed.x = -SPEED_MAX.x
 		
 		
-	if speed > SPEED_MAX:
-		speed = SPEED_MAX
-		
-	elif speed < -SPEED_MAX / 2:
-		speed = -SPEED_MAX / 2
-		
-		
-	velocity = Vector2(speed, 0).rotated(rotation)
+	velocity = speed
 	move_and_slide(velocity)

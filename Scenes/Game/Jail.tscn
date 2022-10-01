@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Assets/Textures/Jail.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Game/Jail.gd" type="Script" id=2]
@@ -12,20 +12,23 @@ extents = Vector2( 208, 108 )
 radius = 88.0
 height = 64.0
 
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 184, 113 )
+
 [sub_resource type="Curve2D" id=3]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 24, 8, 0, 0, 0, 0, 1720, 8 )
+"points": PoolVector2Array( 0, 0, 0, 0, -40, 8, 0, 0, 0, 0, 1816, 8 )
 }
 
 [node name="Jail" type="Node2D"]
 script = ExtResource( 2 )
 
 [node name="JailSprite" type="Sprite" parent="."]
-scale = Vector2( 1.01104, 1 )
 texture = ExtResource( 1 )
 centered = false
 
 [node name="CallArea" type="Area2D" parent="."]
+position = Vector2( -8, 0 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CallArea"]
 position = Vector2( 824, 236 )
@@ -46,12 +49,22 @@ polygon = PoolVector2Array( 104, 944, 104, 24, 1544, 32, 1544, 944, 1424, 944, 1
 [node name="Shelf" parent="." instance=ExtResource( 3 )]
 position = Vector2( 488, 880 )
 
+[node name="GuardFrontDoor" type="Area2D" parent="."]
+position = Vector2( -136, -104 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GuardFrontDoor"]
+position = Vector2( 952, 1 )
+shape = SubResource( 4 )
+
 [node name="Path2D" type="Path2D" parent="."]
 position = Vector2( -88, -112 )
 curve = SubResource( 3 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
 unique_name_in_owner = true
-position = Vector2( 24, 8 )
+position = Vector2( -40, 8 )
 
 [node name="Guard" parent="Path2D/PathFollow2D" instance=ExtResource( 4 )]
+
+[connection signal="area_shape_exited" from="GuardFrontDoor" to="." method="_on_GuardFrontDoor_area_shape_exited"]
+[connection signal="body_entered" from="GuardFrontDoor" to="." method="_on_GuardFrontDoor_body_entered"]
