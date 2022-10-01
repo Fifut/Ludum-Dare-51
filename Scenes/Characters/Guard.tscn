@@ -5,6 +5,7 @@
 [ext_resource path="res://Assets/Textures/Character/Hand.png" type="Texture" id=3]
 
 [node name="Guard" type="Node2D"]
+scale = Vector2( 1.5, 1.5 )
 
 [node name="GuardBodySprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
