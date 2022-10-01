@@ -1,10 +1,13 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=12 format=2]
 
+[ext_resource path="res://Assets/Sounds/Hurt01.wav" type="AudioStream" id=1]
 [ext_resource path="res://Assets/Textures/Walls/Breakable02.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Textures/Walls/Breakable04.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Textures/Walls/Breakable03.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Textures/Walls/Breakable01.png" type="Texture" id=5]
 [ext_resource path="res://Scenes/Game/BreakableWall.gd" type="Script" id=6]
+[ext_resource path="res://Assets/Sounds/Hurt02.wav" type="AudioStream" id=7]
+[ext_resource path="res://Assets/Sounds/Hurt03.wav" type="AudioStream" id=8]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -14,8 +17,8 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="CircleShape2D" id=3]
-radius = 48.1664
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 50, 50 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 28, 28 )
@@ -33,6 +36,7 @@ unique_name_in_owner = true
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractArea"]
+position = Vector2( -2, 2 )
 shape = SubResource( 3 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
@@ -41,6 +45,21 @@ unique_name_in_owner = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 unique_name_in_owner = true
 shape = SubResource( 2 )
+
+[node name="Hurt01" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource( 1 )
+
+[node name="Hurt02" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource( 7 )
+
+[node name="Hurt03" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource( 8 )
+
+[node name="Hurt04" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
 
 [connection signal="body_entered" from="InteractArea" to="." method="_on_InteractArea_body_entered"]
 [connection signal="body_exited" from="InteractArea" to="." method="_on_InteractArea_body_exited"]

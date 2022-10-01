@@ -33,7 +33,6 @@ texture = ExtResource( 2 )
 [node name="Walk" type="AudioStreamPlayer2D" parent="."]
 unique_name_in_owner = true
 stream = ExtResource( 5 )
-max_distance = 1000.0
 
 [connection signal="area_entered" from="." to="." method="_on_Guard_area_entered"]
 [connection signal="area_exited" from="." to="." method="_on_Guard_area_exited"]
