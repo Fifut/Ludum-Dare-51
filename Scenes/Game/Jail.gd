@@ -3,11 +3,12 @@ extends Node2D
 
 
 onready var PathFollow2D = $"%PathFollow2D"
+onready var Shelf = $"%Shelf"
 
 
 
 func _ready():
-	Events.connect("on_clock_timeout",self, "_guardStart")
+	var _err = Events.connect("on_clock_timeout",self, "_guardStart")
 	PathFollow2D.loop = false
 	
 	
@@ -22,11 +23,16 @@ func _guardStart():
 	PathFollow2D.offset = 0
 
 
-func _on_GuardFrontDoor_body_entered(body):
+
+func isOkForChecking():
+	return not Shelf.isOpen()
+
+
+func _on_GuardFrontDoor_area_entered(area):
 	print("Guard front door entered")
 	Events.emit_signal("on_guard_front_door", true)
 
 
-func _on_GuardFrontDoor_body_exited(body):
+func _on_GuardFrontDoor_area_exited(area):
 	print("Guard front door exited")
 	Events.emit_signal("on_guard_front_door", false)

@@ -1,16 +1,14 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Assets/Textures/Jail.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Game/Jail.gd" type="Script" id=2]
 [ext_resource path="res://Scenes/Game/Shelf.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Characters/Guard.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Game/Toilet.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Game/JailPathFollow2D.gd" type="Script" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 208, 108 )
-
-[sub_resource type="CapsuleShape2D" id=2]
-radius = 88.0
-height = 64.0
 
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 164, 113 )
@@ -27,6 +25,9 @@ script = ExtResource( 2 )
 texture = ExtResource( 1 )
 centered = false
 
+[node name="Toilet" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1315, 256 )
+
 [node name="CallArea" type="Area2D" parent="."]
 position = Vector2( -8, 0 )
 
@@ -34,19 +35,13 @@ position = Vector2( -8, 0 )
 position = Vector2( 824, 236 )
 shape = SubResource( 1 )
 
-[node name="ToiletArea" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ToiletArea"]
-position = Vector2( 1312, 256 )
-rotation = 1.5708
-shape = SubResource( 2 )
-
 [node name="Walls" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls"]
 polygon = PoolVector2Array( 104, 944, 104, 24, 1544, 32, 1544, 944, 1424, 944, 1424, 88, 224, 88, 224, 944 )
 
 [node name="Shelf" parent="." instance=ExtResource( 3 )]
+unique_name_in_owner = true
 position = Vector2( 488, 880 )
 
 [node name="GuardFrontDoor" type="Area2D" parent="."]
@@ -63,8 +58,10 @@ curve = SubResource( 3 )
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
 unique_name_in_owner = true
 position = Vector2( -40, 8 )
+script = ExtResource( 6 )
 
 [node name="Guard" parent="Path2D/PathFollow2D" instance=ExtResource( 4 )]
+unique_name_in_owner = true
 
-[connection signal="body_entered" from="GuardFrontDoor" to="." method="_on_GuardFrontDoor_body_entered"]
-[connection signal="body_exited" from="GuardFrontDoor" to="." method="_on_GuardFrontDoor_body_exited"]
+[connection signal="area_entered" from="GuardFrontDoor" to="." method="_on_GuardFrontDoor_area_entered"]
+[connection signal="area_exited" from="GuardFrontDoor" to="." method="_on_GuardFrontDoor_area_exited"]

@@ -16,7 +16,7 @@ func _ready():
 			breakable.position = Vector2(120 + 60 * x, 60 + 60 * y)
 			add_child(breakable)
 		
-	for i in range(0, 10):
+	for _i in range(0, 10):
 		var unbreakable = Unbreakable.instance()
 		unbreakable.position = Vector2(120 + 60 * (randi() % 19), 60 + 60 * (randi() % 12) )
 		add_child(unbreakable)

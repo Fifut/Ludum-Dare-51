@@ -5,7 +5,7 @@ onready var TenSecondsTimer = $"%TenSecondsTimer"
 onready var ClockHandSprite = $"%ClockHandSprite"
 
 
-func _process(delta):
+func _process(_delta):
 	ClockHandSprite.rotation_degrees = range_lerp(TenSecondsTimer.time_left, 10, 0, 0, 360)
 
 

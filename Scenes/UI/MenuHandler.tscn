@@ -50,19 +50,21 @@ valign = 1
 [node name="Description" type="Label" parent="VBoxContainer"]
 margin_top = 172.0
 margin_right = 815.0
-margin_bottom = 203.0
+margin_bottom = 271.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 2 )
-text = "Toto explication jeux"
+text = "Arrow keys to move
+Left mouse click to interact
+Right mouse click to grad and drop"
 align = 1
 valign = 1
 
 [node name="ButtonStart" type="TextureButton" parent="VBoxContainer"]
 unique_name_in_owner = true
 margin_left = 280.0
-margin_top = 253.0
+margin_top = 321.0
 margin_right = 535.0
-margin_bottom = 321.0
+margin_bottom = 389.0
 size_flags_horizontal = 4
 texture_normal = ExtResource( 5 )
 texture_pressed = ExtResource( 5 )

@@ -1,9 +1,11 @@
 extends KinematicBody2D
 
 
+onready var Dirt_scene = preload("res://Scenes/Game/Dirt.tscn")
+
 
 onready var AnimationPlayer = $"%AnimationPlayer"
-
+onready var Dirt = $"%Dirt"
 
 
 const ACCELERATION = 100
@@ -14,6 +16,11 @@ const SPEED_MAX = Vector2(1000,1000)
 
 var speed = Vector2.ZERO
 var velocity = Vector2.ZERO
+var grabbed_item = ""
+
+
+func _ready():
+	Dirt.hide()
 
 
 
@@ -27,11 +34,21 @@ func _process(delta):
 	
 func _interacte():
 	
-	if Input.is_action_just_pressed("interact"):
+	if grabbed_item == "" and Input.is_action_just_pressed("interact"):
 		AnimationPlayer.play("Interact")
+		
+		
+#	if Input.is_action_just_pressed("grab") and grabbed_item != "":
+#
+#		AnimationPlayer.play_backwards("Carry")
+#		var dirt = Dirt_scene.instance()
+#		dirt.name = grabbed_item
+#		get_parent().add_child(dirt)
+#		grabbed_item = ""
+	
 	
 
-func _direction(delta):
+func _direction(_delta):
 		
 	if Input.is_action_pressed("up"):
 		speed.y -= ACCELERATION
@@ -73,3 +90,36 @@ func _direction(delta):
 		
 	velocity = speed
 	move_and_slide(velocity)
+
+
+
+func grab(name):
+	
+	if grabbed_item == "":
+		print("Player grab : " + name)
+		AnimationPlayer.play("Carry")
+		grabbed_item = name
+		return true
+		
+	else:
+		return false
+
+
+func drop():
+	
+	if grabbed_item != "":
+		print("Player drop : " + name)
+		AnimationPlayer.play_backwards("Carry")
+		grabbed_item = ""
+		return true
+	else:
+		return false
+
+
+
+func isCarryingSomething():
+	
+	if  grabbed_item == "":
+		return false
+	else:
+		return true
