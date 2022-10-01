@@ -9,7 +9,7 @@
 radius = 21.3333
 height = 64.0
 
-[node name="Guard" type="StaticBody2D"]
+[node name="Guard" type="Area2D"]
 scale = Vector2( 1.5, 1.5 )
 script = ExtResource( 4 )
 
@@ -28,3 +28,6 @@ position = Vector2( 48, 16 )
 texture = ExtResource( 2 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[connection signal="area_entered" from="." to="." method="_on_Guard_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_Guard_area_exited"]

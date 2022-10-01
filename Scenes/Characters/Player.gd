@@ -1,18 +1,34 @@
 extends KinematicBody2D
 
 
+
+onready var AnimationPlayer = $"%AnimationPlayer"
+
+
+
 const ACCELERATION = 100
 const DECELERATION = 300
 const SPEED_MAX = Vector2(1000,1000)
+
+
 
 var speed = Vector2.ZERO
 var velocity = Vector2.ZERO
 
 
+
 func _process(delta):
 	
 	look_at(get_global_mouse_position() )
+	_interacte()
 	_direction(delta)
+	
+	
+	
+func _interacte():
+	
+	if Input.is_action_just_pressed("interact"):
+		AnimationPlayer.play("Interact")
 	
 
 func _direction(delta):

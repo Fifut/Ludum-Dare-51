@@ -23,8 +23,10 @@ func _guardStart():
 
 
 func _on_GuardFrontDoor_body_entered(body):
+	print("Guard front door entered")
 	Events.emit_signal("on_guard_front_door", true)
 
 
-func _on_GuardFrontDoor_area_shape_exited(area_rid, area, area_shape_index, local_shape_index):
+func _on_GuardFrontDoor_body_exited(body):
+	print("Guard front door exited")
 	Events.emit_signal("on_guard_front_door", false)
