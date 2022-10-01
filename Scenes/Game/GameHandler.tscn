@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Assets/Textures/Paper.jpg" type="Texture" id=1]
 [ext_resource path="res://Scenes/Game/Jail.tscn" type="PackedScene" id=2]
@@ -11,25 +11,61 @@
 [ext_resource path="res://Assets/Musics/Game.wav" type="AudioStream" id=9]
 [ext_resource path="res://Scenes/UI/Lose.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/UI/Win.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Assets/Textures/Jail2.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Textures/Shelf.png" type="Texture" id=13]
 
 [node name="GameHandler" type="Node2D"]
 script = ExtResource( 7 )
 
-[node name="Background" type="Sprite" parent="."]
-position = Vector2( -8, 0 )
-scale = Vector2( 1.011, 1.022 )
+[node name="Background" type="Node2D" parent="."]
+
+[node name="Background01" type="Sprite" parent="Background"]
+position = Vector2( -2420, -788 )
 texture = ExtResource( 1 )
 centered = false
+flip_v = true
+
+[node name="Background02" type="Sprite" parent="Background"]
+position = Vector2( 772, -788 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Background03" type="Sprite" parent="Background"]
+position = Vector2( -2480, 1638 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Background04" type="Sprite" parent="Background"]
+position = Vector2( 712, 1638 )
+texture = ExtResource( 1 )
+centered = false
+flip_v = true
+
+[node name="Jail01" type="Sprite" parent="Background"]
+position = Vector2( -592, 1192 )
+texture = ExtResource( 12 )
+
+[node name="Jail02" type="Sprite" parent="Background"]
+position = Vector2( 2016, 1188 )
+texture = ExtResource( 12 )
+
+[node name="Shelf01" type="Sprite" parent="Background"]
+position = Vector2( -916, 1160 )
+texture = ExtResource( 13 )
+
+[node name="Shelf02" type="Sprite" parent="Background"]
+position = Vector2( 1688, 1160 )
+texture = ExtResource( 13 )
 
 [node name="Jail" parent="." instance=ExtResource( 2 )]
 unique_name_in_owner = true
 position = Vector2( 0, 272 )
 
 [node name="DiggableWalls" parent="." instance=ExtResource( 4 )]
-position = Vector2( 136, 1244 )
+position = Vector2( 28, 1220 )
 
 [node name="Outside" parent="." instance=ExtResource( 3 )]
-position = Vector2( 808, 2160 )
+position = Vector2( 812, 2236 )
 
 [node name="Player" parent="." instance=ExtResource( 5 )]
 unique_name_in_owner = true

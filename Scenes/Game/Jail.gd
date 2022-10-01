@@ -3,19 +3,23 @@ extends Node2D
 
 
 onready var PathFollow2D = $"%PathFollow2D"
+onready var Path_2D = $"%Path2D"
 onready var Shelf = $"%Shelf"
 onready var Guard = $"%Guard"
 onready var JailArea = $"%JailArea"
 
 
+
 func _ready():
-	var _err = Events.connect("on_clock_timeout",self, "_guardStart")
-	PathFollow2D.loop = false
 	
+	var _err = Events.connect("on_clock_timeout",self, "_guardStart")
+	
+	PathFollow2D.loop = false
+	print(Path_2D.curve.get_baked_length())
 	
 	
 func _process(delta):
-	PathFollow2D.offset += 500 * delta
+	PathFollow2D.offset += 400 * delta
 
 
 
