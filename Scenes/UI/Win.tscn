@@ -1,14 +1,14 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Fonts/Good brush 100.tres" type="DynamicFont" id=1]
-[ext_resource path="res://Scenes/UI/Lose.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/UI/Win.gd" type="Script" id=1]
+[ext_resource path="res://Fonts/Good brush 100.tres" type="DynamicFont" id=2]
 [ext_resource path="res://Scenes/UI/Inherited/ButtonRestart.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/UI/Inherited/ButtonQuitToMenu.tscn" type="PackedScene" id=4]
 
-[node name="Lose" type="Control"]
+[node name="Win" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 2 )
+script = ExtResource( 1 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
@@ -31,31 +31,31 @@ margin_right = -100.0
 margin_bottom = -100.0
 
 [node name="HBoxContainer" type="VBoxContainer" parent="CanvasLayer/CenterContainer"]
-margin_left = 529.0
+margin_left = 407.0
 margin_top = 193.0
-margin_right = 901.0
+margin_right = 1023.0
 margin_bottom = 551.0
 custom_constants/separation = 50
 
 [node name="Title" type="Label" parent="CanvasLayer/CenterContainer/HBoxContainer"]
-margin_right = 372.0
+margin_right = 616.0
 margin_bottom = 122.0
-custom_colors/font_color = Color( 1, 0, 0, 1 )
-custom_fonts/font = ExtResource( 1 )
-text = "Busted !"
+custom_colors/font_color = Color( 0, 1, 0, 1 )
+custom_fonts/font = ExtResource( 2 )
+text = "You are free !"
 
 [node name="Restart" parent="CanvasLayer/CenterContainer/HBoxContainer" instance=ExtResource( 3 )]
 modulate = Color( 1, 1, 0.721569, 1 )
-margin_left = 58.0
+margin_left = 180.0
 margin_top = 172.0
-margin_right = 313.0
+margin_right = 435.0
 margin_bottom = 240.0
 
 [node name="Quit" parent="CanvasLayer/CenterContainer/HBoxContainer" instance=ExtResource( 4 )]
 modulate = Color( 1, 1, 0.721569, 1 )
-margin_left = 58.0
+margin_left = 180.0
 margin_top = 290.0
-margin_right = 313.0
+margin_right = 435.0
 margin_bottom = 358.0
 
 [connection signal="pressed" from="CanvasLayer/CenterContainer/HBoxContainer/Restart" to="." method="_on_Restart_pressed"]

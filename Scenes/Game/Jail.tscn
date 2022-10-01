@@ -8,7 +8,7 @@
 [ext_resource path="res://Scenes/Game/JailPathFollow2D.gd" type="Script" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 208, 108 )
+extents = Vector2( 580, 420 )
 
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 164, 113 )
@@ -28,11 +28,13 @@ centered = false
 [node name="Toilet" parent="." instance=ExtResource( 5 )]
 position = Vector2( 1315, 256 )
 
-[node name="CallArea" type="Area2D" parent="."]
+[node name="JailArea" type="Area2D" parent="."]
+unique_name_in_owner = true
 position = Vector2( -8, 0 )
+monitorable = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CallArea"]
-position = Vector2( 824, 236 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="JailArea"]
+position = Vector2( 820, 516 )
 shape = SubResource( 1 )
 
 [node name="Walls" type="StaticBody2D" parent="."]

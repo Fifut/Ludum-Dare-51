@@ -6,20 +6,22 @@ extends TextureButton
 export(String) var Text = "Button"
 
 
-signal on_Button_pressed
-
-
 
 onready var AnimationPlayer = $"%AnimationPlayer"
 onready var Label = $"%Label"
 
 
 
+func _ready():
+	AnimationPlayer.play("RESET")
+
+
+
 func _process(_delta):
 	
-	if Text.length() > 1:
+	if Label != null and Text.length() > 1:
 		Label.text = Text
-	else:
+	elif Label != null:
 		Label.text = "Button"
 
 
@@ -32,7 +34,3 @@ func _on_Button_mouse_entered():
 func _on_Button_mouse_exited():
 	AnimationPlayer.play_backwards("Mouse_entered")
 
-
-
-func _on_Button_pressed():
-	emit_signal("on_Button_pressed")

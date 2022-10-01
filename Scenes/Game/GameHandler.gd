@@ -5,6 +5,7 @@ extends Node2D
 onready var Jail = $"%Jail"
 onready var Player = $"%Player"
 onready var Lose = $"%Lose" 
+onready var Win = $"%Win"
 onready var Music = $"%Music"
 onready var Alarm = $"%Alarm"
 
@@ -17,6 +18,7 @@ var checking = false
 func _ready():
 	
 	Lose.hide()
+	Win.hide()
 	
 	var _err = Events.connect("on_guard_front_door", self, "jailChecking")
 
@@ -43,7 +45,16 @@ func jailChecking(status):
 
 
 func _on_Outside_on_EscapeArea_body_entered():
-	pass # TODO c'est la fin du jeu, niveau suivant
+	
+	Win.show()
+		
+	Jail.stop()
+	Player.set_process(false)
+		
+	Music.stop()
+#	Alarm.play()
+#	yield(get_tree().create_timer(3.0), "timeout")
+#	Alarm.stop()
 
 
 

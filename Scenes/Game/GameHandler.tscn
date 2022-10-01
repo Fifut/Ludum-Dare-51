@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Assets/Textures/Paper.jpg" type="Texture" id=1]
 [ext_resource path="res://Scenes/Game/Jail.tscn" type="PackedScene" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Assets/Sounds/Alarm.wav" type="AudioStream" id=8]
 [ext_resource path="res://Assets/Musics/Game.wav" type="AudioStream" id=9]
 [ext_resource path="res://Scenes/UI/Lose.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/UI/Win.tscn" type="PackedScene" id=11]
 
 [node name="GameHandler" type="Node2D"]
 script = ExtResource( 7 )
@@ -47,6 +48,14 @@ margin_left = 80.0
 margin_top = 152.0
 margin_right = 80.0
 margin_bottom = 152.0
+
+[node name="Win" parent="." instance=ExtResource( 11 )]
+unique_name_in_owner = true
+visible = false
+margin_left = 136.0
+margin_top = 1244.0
+margin_right = 136.0
+margin_bottom = 1244.0
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true

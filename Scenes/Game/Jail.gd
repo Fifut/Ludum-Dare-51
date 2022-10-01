@@ -5,7 +5,7 @@ extends Node2D
 onready var PathFollow2D = $"%PathFollow2D"
 onready var Shelf = $"%Shelf"
 onready var Guard = $"%Guard"
-
+onready var JailArea = $"%JailArea"
 
 
 func _ready():
@@ -29,7 +29,12 @@ func stop():
 
 
 func isOkForChecking():
-	return not Shelf.isOpen()
+	
+	for area in JailArea.get_overlapping_bodies():
+		return not Shelf.isOpen()
+
+	return false
+
 
 
 func _on_GuardFrontDoor_area_entered(_area):
