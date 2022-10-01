@@ -4,6 +4,7 @@ extends Node2D
 
 onready var PathFollow2D = $"%PathFollow2D"
 onready var Shelf = $"%Shelf"
+onready var Guard = $"%Guard"
 
 
 
@@ -14,7 +15,6 @@ func _ready():
 	
 	
 func _process(delta):
-	
 	PathFollow2D.offset += 500 * delta
 
 
@@ -23,16 +23,20 @@ func _guardStart():
 	PathFollow2D.offset = 0
 
 
+func stop():
+	Guard.stop()
+	set_process(false)
+
 
 func isOkForChecking():
 	return not Shelf.isOpen()
 
 
-func _on_GuardFrontDoor_area_entered(area):
+func _on_GuardFrontDoor_area_entered(_area):
 	print("Guard front door entered")
 	Events.emit_signal("on_guard_front_door", true)
 
 
-func _on_GuardFrontDoor_area_exited(area):
+func _on_GuardFrontDoor_area_exited(_area):
 	print("Guard front door exited")
 	Events.emit_signal("on_guard_front_door", false)

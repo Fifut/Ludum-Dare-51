@@ -5,7 +5,7 @@ onready var Guard = $"%Guard"
 
 
 
-func _process(delta):
+func _process(_delta):
 	
 	if unit_offset <= 0.05:
 		Guard.start()

@@ -89,7 +89,7 @@ func _direction(_delta):
 		
 		
 	velocity = speed
-	move_and_slide(velocity)
+	var err_ = move_and_slide(velocity)
 
 
 
