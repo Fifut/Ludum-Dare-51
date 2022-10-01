@@ -7,7 +7,7 @@ onready var CanvasLayer = $"%CanvasLayer"
 
 
 
-func _process(delta):
+func _process(_delta):
 	
 	if CanvasLayer!= null:
 		CanvasLayer.visible = visible
@@ -15,9 +15,10 @@ func _process(delta):
 
 
 func _on_Restart_pressed():
-	get_tree().change_scene("res://Scenes/Game/GameHandler.tscn")
+	var _err = get_tree().change_scene("res://Scenes/Game/GameHandler.tscn")
 
 
 
 func _on_Quit_pressed():
-	get_tree().change_scene("res://Scenes/UI/MenuHandler.tscn")
+	var _err = get_tree().change_scene("res://Scenes/UI/MenuHandler.tscn")
+

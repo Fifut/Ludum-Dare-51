@@ -30,8 +30,13 @@ func stop():
 
 func isOkForChecking():
 	
-	for area in JailArea.get_overlapping_bodies():
-		return not Shelf.isOpen()
+	for body in JailArea.get_overlapping_bodies():
+		if body.is_in_group("Dirt"):
+			return false
+			
+	for body in JailArea.get_overlapping_bodies():
+		if body is KinematicBody2D:
+			return not Shelf.isOpen()
 
 	return false
 

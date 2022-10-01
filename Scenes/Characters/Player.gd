@@ -30,21 +30,24 @@ func _process(delta):
 	_interacte()
 	_direction(delta)
 	
-	
+		
 	
 func _interacte():
 	
 	if grabbed_item == "" and Input.is_action_just_pressed("interact"):
 		AnimationPlayer.play("Interact")
-		
-		
-#	if Input.is_action_just_pressed("grab") and grabbed_item != "":
-#
-#		AnimationPlayer.play_backwards("Carry")
-#		var dirt = Dirt_scene.instance()
-#		dirt.name = grabbed_item
-#		get_parent().add_child(dirt)
-#		grabbed_item = ""
+
+
+	if Input.is_action_just_pressed("grab") and grabbed_item != "":
+		AnimationPlayer.play_backwards("Carry")
+		var dirt = Dirt_scene.instance()
+		dirt.name = grabbed_item
+		dirt.position = position + Vector2(80,0).rotated(rotation)
+		dirt.add_to_group("Dirt")
+		get_parent().add_child(dirt)
+		grabbed_item = ""
+
+
 	
 	
 
@@ -89,7 +92,7 @@ func _direction(_delta):
 		
 		
 	velocity = speed
-	var err_ = move_and_slide(velocity)
+	var _err = move_and_slide(velocity)
 
 
 
@@ -108,7 +111,7 @@ func grab(name):
 func drop():
 	
 	if grabbed_item != "":
-		print("Player drop : " + name)
+		print("Player drop : " + grabbed_item)
 		AnimationPlayer.play_backwards("Carry")
 		grabbed_item = ""
 		return true

@@ -1,14 +1,14 @@
 extends StaticBody2D
 
 
-var body: KinematicBody2D
+var body
 
 
 func _process(_delta):
 	
 	if body != null:
 		
-		if Input.is_action_just_pressed("grab") and body.has_method("grab"):
+		if Input.is_action_just_released("grab") and body.has_method("grab"):
 			var picked = body.grab(name)
 			
 			if picked:
