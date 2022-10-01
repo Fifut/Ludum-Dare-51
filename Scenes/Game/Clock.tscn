@@ -5,6 +5,7 @@
 [ext_resource path="res://Scenes/Game/Clock.gd" type="Script" id=3]
 
 [node name="Clock" type="Node2D"]
+scale = Vector2( 0.5, 0.5 )
 script = ExtResource( 3 )
 
 [node name="ClockSprite" type="Sprite" parent="."]
@@ -19,3 +20,5 @@ offset = Vector2( 0, -40 )
 unique_name_in_owner = true
 wait_time = 10.0
 autostart = true
+
+[connection signal="timeout" from="TenSecondsTimer" to="." method="_on_TenSecondsTimer_timeout"]

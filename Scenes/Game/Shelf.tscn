@@ -1,15 +1,30 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Assets/Textures/Shelf.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/Game/Shelf.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 144, 40 )
+
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 176, 68 )
 
 [node name="Shelf" type="StaticBody2D"]
+script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, -20 )
 shape = SubResource( 1 )
+
+[node name="IntercatArea" type="Area2D" parent="."]
+unique_name_in_owner = true
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="IntercatArea"]
+position = Vector2( 0, -20 )
+shape = SubResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
+
+[connection signal="body_entered" from="IntercatArea" to="." method="_on_IntercatArea_body_entered"]
+[connection signal="body_exited" from="IntercatArea" to="." method="_on_IntercatArea_body_exited"]
