@@ -1,298 +1,302 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scenes/Game/UnbreakableWall.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Game/BreakableWall.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Game/DiggableWalls.gd" type="Script" id=3]
 
 [node name="DiggableWalls" type="Node2D"]
+script = ExtResource( 3 )
 
-[node name="UnbreakablesRight" type="Node2D" parent="."]
+[node name="Static" type="Node2D" parent="."]
+
+[node name="UnbreakablesRight" type="Node2D" parent="Static"]
 position = Vector2( 0, 60 )
 
-[node name="UnbreakableWall25" parent="UnbreakablesRight" instance=ExtResource( 1 )]
+[node name="UnbreakableWall25" parent="Static/UnbreakablesRight" instance=ExtResource( 1 )]
 position = Vector2( 60, 0 )
 
-[node name="UnbreakableWall26" parent="UnbreakablesRight" instance=ExtResource( 1 )]
+[node name="UnbreakableWall26" parent="Static/UnbreakablesRight" instance=ExtResource( 1 )]
 
-[node name="UnbreakableWall27" parent="UnbreakablesRight" instance=ExtResource( 1 )]
+[node name="UnbreakableWall27" parent="Static/UnbreakablesRight" instance=ExtResource( 1 )]
 position = Vector2( 0, 60 )
 
-[node name="UnbreakableWall28" parent="UnbreakablesRight" instance=ExtResource( 1 )]
+[node name="UnbreakableWall28" parent="Static/UnbreakablesRight" instance=ExtResource( 1 )]
 position = Vector2( 60, 60 )
 
-[node name="UnbreakableWall29" parent="UnbreakablesRight" instance=ExtResource( 1 )]
+[node name="UnbreakableWall29" parent="Static/UnbreakablesRight" instance=ExtResource( 1 )]
 position = Vector2( 0, 120 )
 
-[node name="UnbreakableWall30" parent="UnbreakablesRight" instance=ExtResource( 1 )]
+[node name="UnbreakableWall30" parent="Static/UnbreakablesRight" instance=ExtResource( 1 )]
 position = Vector2( 60, 120 )
 
-[node name="UnbreakableWall31" parent="UnbreakablesRight" instance=ExtResource( 1 )]
+[node name="UnbreakableWall31" parent="Static/UnbreakablesRight" instance=ExtResource( 1 )]
 position = Vector2( 60, 180 )
 
-[node name="UnbreakableWall32" parent="UnbreakablesRight" instance=ExtResource( 1 )]
+[node name="UnbreakableWall32" parent="Static/UnbreakablesRight" instance=ExtResource( 1 )]
 position = Vector2( 0, 180 )
 
-[node name="UnbreakableWall33" parent="UnbreakablesRight" instance=ExtResource( 1 )]
+[node name="UnbreakableWall33" parent="Static/UnbreakablesRight" instance=ExtResource( 1 )]
 position = Vector2( 0, 240 )
 
-[node name="UnbreakableWall34" parent="UnbreakablesRight" instance=ExtResource( 1 )]
+[node name="UnbreakableWall34" parent="Static/UnbreakablesRight" instance=ExtResource( 1 )]
 position = Vector2( 60, 240 )
 
-[node name="UnbreakableWall35" parent="UnbreakablesRight" instance=ExtResource( 1 )]
+[node name="UnbreakableWall35" parent="Static/UnbreakablesRight" instance=ExtResource( 1 )]
 position = Vector2( 0, 300 )
 
-[node name="UnbreakableWall36" parent="UnbreakablesRight" instance=ExtResource( 1 )]
+[node name="UnbreakableWall36" parent="Static/UnbreakablesRight" instance=ExtResource( 1 )]
 position = Vector2( 60, 300 )
 
-[node name="UnbreakableWall37" parent="UnbreakablesRight" instance=ExtResource( 1 )]
+[node name="UnbreakableWall37" parent="Static/UnbreakablesRight" instance=ExtResource( 1 )]
 position = Vector2( 60, 360 )
 
-[node name="UnbreakableWall38" parent="UnbreakablesRight" instance=ExtResource( 1 )]
+[node name="UnbreakableWall38" parent="Static/UnbreakablesRight" instance=ExtResource( 1 )]
 position = Vector2( 0, 360 )
 
-[node name="UnbreakableWall39" parent="UnbreakablesRight" instance=ExtResource( 1 )]
+[node name="UnbreakableWall39" parent="Static/UnbreakablesRight" instance=ExtResource( 1 )]
 position = Vector2( 0, 420 )
 
-[node name="UnbreakableWall40" parent="UnbreakablesRight" instance=ExtResource( 1 )]
+[node name="UnbreakableWall40" parent="Static/UnbreakablesRight" instance=ExtResource( 1 )]
 position = Vector2( 60, 420 )
 
-[node name="UnbreakableWall41" parent="UnbreakablesRight" instance=ExtResource( 1 )]
+[node name="UnbreakableWall41" parent="Static/UnbreakablesRight" instance=ExtResource( 1 )]
 position = Vector2( 0, 480 )
 
-[node name="UnbreakableWall42" parent="UnbreakablesRight" instance=ExtResource( 1 )]
+[node name="UnbreakableWall42" parent="Static/UnbreakablesRight" instance=ExtResource( 1 )]
 position = Vector2( 60, 480 )
 
-[node name="UnbreakableWall43" parent="UnbreakablesRight" instance=ExtResource( 1 )]
+[node name="UnbreakableWall43" parent="Static/UnbreakablesRight" instance=ExtResource( 1 )]
 position = Vector2( 60, 540 )
 
-[node name="UnbreakableWall44" parent="UnbreakablesRight" instance=ExtResource( 1 )]
+[node name="UnbreakableWall44" parent="Static/UnbreakablesRight" instance=ExtResource( 1 )]
 position = Vector2( 0, 540 )
 
-[node name="UnbreakableWall45" parent="UnbreakablesRight" instance=ExtResource( 1 )]
+[node name="UnbreakableWall45" parent="Static/UnbreakablesRight" instance=ExtResource( 1 )]
 position = Vector2( 0, 600 )
 
-[node name="UnbreakableWall46" parent="UnbreakablesRight" instance=ExtResource( 1 )]
+[node name="UnbreakableWall46" parent="Static/UnbreakablesRight" instance=ExtResource( 1 )]
 position = Vector2( 60, 600 )
 
-[node name="UnbreakableWall47" parent="UnbreakablesRight" instance=ExtResource( 1 )]
+[node name="UnbreakableWall47" parent="Static/UnbreakablesRight" instance=ExtResource( 1 )]
 position = Vector2( 0, 660 )
 
-[node name="UnbreakableWall48" parent="UnbreakablesRight" instance=ExtResource( 1 )]
+[node name="UnbreakableWall48" parent="Static/UnbreakablesRight" instance=ExtResource( 1 )]
 position = Vector2( 60, 660 )
 
-[node name="UnbreakablesLeft" type="Node2D" parent="."]
+[node name="UnbreakablesLeft" type="Node2D" parent="Static"]
 position = Vector2( 1260, 60 )
 
-[node name="UnbreakableWall01" parent="UnbreakablesLeft" instance=ExtResource( 1 )]
+[node name="UnbreakableWall01" parent="Static/UnbreakablesLeft" instance=ExtResource( 1 )]
 position = Vector2( 60, 0 )
 
-[node name="UnbreakableWall02" parent="UnbreakablesLeft" instance=ExtResource( 1 )]
+[node name="UnbreakableWall02" parent="Static/UnbreakablesLeft" instance=ExtResource( 1 )]
 
-[node name="UnbreakableWall03" parent="UnbreakablesLeft" instance=ExtResource( 1 )]
+[node name="UnbreakableWall03" parent="Static/UnbreakablesLeft" instance=ExtResource( 1 )]
 position = Vector2( 0, 60 )
 
-[node name="UnbreakableWall04" parent="UnbreakablesLeft" instance=ExtResource( 1 )]
+[node name="UnbreakableWall04" parent="Static/UnbreakablesLeft" instance=ExtResource( 1 )]
 position = Vector2( 60, 60 )
 
-[node name="UnbreakableWall05" parent="UnbreakablesLeft" instance=ExtResource( 1 )]
+[node name="UnbreakableWall05" parent="Static/UnbreakablesLeft" instance=ExtResource( 1 )]
 position = Vector2( 0, 120 )
 
-[node name="UnbreakableWall06" parent="UnbreakablesLeft" instance=ExtResource( 1 )]
+[node name="UnbreakableWall06" parent="Static/UnbreakablesLeft" instance=ExtResource( 1 )]
 position = Vector2( 60, 120 )
 
-[node name="UnbreakableWall07" parent="UnbreakablesLeft" instance=ExtResource( 1 )]
+[node name="UnbreakableWall07" parent="Static/UnbreakablesLeft" instance=ExtResource( 1 )]
 position = Vector2( 60, 180 )
 
-[node name="UnbreakableWall08" parent="UnbreakablesLeft" instance=ExtResource( 1 )]
+[node name="UnbreakableWall08" parent="Static/UnbreakablesLeft" instance=ExtResource( 1 )]
 position = Vector2( 0, 180 )
 
-[node name="UnbreakableWall09" parent="UnbreakablesLeft" instance=ExtResource( 1 )]
+[node name="UnbreakableWall09" parent="Static/UnbreakablesLeft" instance=ExtResource( 1 )]
 position = Vector2( 0, 240 )
 
-[node name="UnbreakableWall10" parent="UnbreakablesLeft" instance=ExtResource( 1 )]
+[node name="UnbreakableWall10" parent="Static/UnbreakablesLeft" instance=ExtResource( 1 )]
 position = Vector2( 60, 240 )
 
-[node name="UnbreakableWall11" parent="UnbreakablesLeft" instance=ExtResource( 1 )]
+[node name="UnbreakableWall11" parent="Static/UnbreakablesLeft" instance=ExtResource( 1 )]
 position = Vector2( 0, 300 )
 
-[node name="UnbreakableWall12" parent="UnbreakablesLeft" instance=ExtResource( 1 )]
+[node name="UnbreakableWall12" parent="Static/UnbreakablesLeft" instance=ExtResource( 1 )]
 position = Vector2( 60, 300 )
 
-[node name="UnbreakableWall13" parent="UnbreakablesLeft" instance=ExtResource( 1 )]
+[node name="UnbreakableWall13" parent="Static/UnbreakablesLeft" instance=ExtResource( 1 )]
 position = Vector2( 60, 360 )
 
-[node name="UnbreakableWall14" parent="UnbreakablesLeft" instance=ExtResource( 1 )]
+[node name="UnbreakableWall14" parent="Static/UnbreakablesLeft" instance=ExtResource( 1 )]
 position = Vector2( 0, 360 )
 
-[node name="UnbreakableWall15" parent="UnbreakablesLeft" instance=ExtResource( 1 )]
+[node name="UnbreakableWall15" parent="Static/UnbreakablesLeft" instance=ExtResource( 1 )]
 position = Vector2( 0, 420 )
 
-[node name="UnbreakableWall16" parent="UnbreakablesLeft" instance=ExtResource( 1 )]
+[node name="UnbreakableWall16" parent="Static/UnbreakablesLeft" instance=ExtResource( 1 )]
 position = Vector2( 60, 420 )
 
-[node name="UnbreakableWall17" parent="UnbreakablesLeft" instance=ExtResource( 1 )]
+[node name="UnbreakableWall17" parent="Static/UnbreakablesLeft" instance=ExtResource( 1 )]
 position = Vector2( 0, 480 )
 
-[node name="UnbreakableWall18" parent="UnbreakablesLeft" instance=ExtResource( 1 )]
+[node name="UnbreakableWall18" parent="Static/UnbreakablesLeft" instance=ExtResource( 1 )]
 position = Vector2( 60, 480 )
 
-[node name="UnbreakableWall19" parent="UnbreakablesLeft" instance=ExtResource( 1 )]
+[node name="UnbreakableWall19" parent="Static/UnbreakablesLeft" instance=ExtResource( 1 )]
 position = Vector2( 60, 540 )
 
-[node name="UnbreakableWall20" parent="UnbreakablesLeft" instance=ExtResource( 1 )]
+[node name="UnbreakableWall20" parent="Static/UnbreakablesLeft" instance=ExtResource( 1 )]
 position = Vector2( 0, 540 )
 
-[node name="UnbreakableWall21" parent="UnbreakablesLeft" instance=ExtResource( 1 )]
+[node name="UnbreakableWall21" parent="Static/UnbreakablesLeft" instance=ExtResource( 1 )]
 position = Vector2( 0, 600 )
 
-[node name="UnbreakableWall22" parent="UnbreakablesLeft" instance=ExtResource( 1 )]
+[node name="UnbreakableWall22" parent="Static/UnbreakablesLeft" instance=ExtResource( 1 )]
 position = Vector2( 60, 600 )
 
-[node name="UnbreakableWall23" parent="UnbreakablesLeft" instance=ExtResource( 1 )]
+[node name="UnbreakableWall23" parent="Static/UnbreakablesLeft" instance=ExtResource( 1 )]
 position = Vector2( 0, 660 )
 
-[node name="UnbreakableWall24" parent="UnbreakablesLeft" instance=ExtResource( 1 )]
+[node name="UnbreakableWall24" parent="Static/UnbreakablesLeft" instance=ExtResource( 1 )]
 position = Vector2( 60, 660 )
 
-[node name="UnbreakablesTop" type="Node2D" parent="."]
+[node name="UnbreakablesTop" type="Node2D" parent="Static"]
 
-[node name="UnbreakableWall01" parent="UnbreakablesTop" instance=ExtResource( 1 )]
+[node name="UnbreakableWall01" parent="Static/UnbreakablesTop" instance=ExtResource( 1 )]
 
-[node name="UnbreakableWall02" parent="UnbreakablesTop" instance=ExtResource( 1 )]
+[node name="UnbreakableWall02" parent="Static/UnbreakablesTop" instance=ExtResource( 1 )]
 position = Vector2( 60, 0 )
 
-[node name="UnbreakableWall03" parent="UnbreakablesTop" instance=ExtResource( 1 )]
+[node name="UnbreakableWall03" parent="Static/UnbreakablesTop" instance=ExtResource( 1 )]
 position = Vector2( 120, 0 )
 
-[node name="UnbreakableWall04" parent="UnbreakablesTop" instance=ExtResource( 1 )]
+[node name="UnbreakableWall04" parent="Static/UnbreakablesTop" instance=ExtResource( 1 )]
 position = Vector2( 180, 0 )
 
-[node name="UnbreakableWall05" parent="UnbreakablesTop" instance=ExtResource( 1 )]
+[node name="UnbreakableWall05" parent="Static/UnbreakablesTop" instance=ExtResource( 1 )]
 position = Vector2( 240, 0 )
 
-[node name="UnbreakableWall06" parent="UnbreakablesTop" instance=ExtResource( 1 )]
+[node name="UnbreakableWall06" parent="Static/UnbreakablesTop" instance=ExtResource( 1 )]
 position = Vector2( 480, 0 )
 
-[node name="UnbreakableWall07" parent="UnbreakablesTop" instance=ExtResource( 1 )]
+[node name="UnbreakableWall07" parent="Static/UnbreakablesTop" instance=ExtResource( 1 )]
 position = Vector2( 540, 0 )
 
-[node name="UnbreakableWall08" parent="UnbreakablesTop" instance=ExtResource( 1 )]
+[node name="UnbreakableWall08" parent="Static/UnbreakablesTop" instance=ExtResource( 1 )]
 position = Vector2( 600, 0 )
 
-[node name="UnbreakableWall09" parent="UnbreakablesTop" instance=ExtResource( 1 )]
+[node name="UnbreakableWall09" parent="Static/UnbreakablesTop" instance=ExtResource( 1 )]
 position = Vector2( 660, 0 )
 
-[node name="UnbreakableWall10" parent="UnbreakablesTop" instance=ExtResource( 1 )]
+[node name="UnbreakableWall10" parent="Static/UnbreakablesTop" instance=ExtResource( 1 )]
 position = Vector2( 720, 0 )
 
-[node name="UnbreakableWall11" parent="UnbreakablesTop" instance=ExtResource( 1 )]
+[node name="UnbreakableWall11" parent="Static/UnbreakablesTop" instance=ExtResource( 1 )]
 position = Vector2( 780, 0 )
 
-[node name="UnbreakableWall12" parent="UnbreakablesTop" instance=ExtResource( 1 )]
+[node name="UnbreakableWall12" parent="Static/UnbreakablesTop" instance=ExtResource( 1 )]
 position = Vector2( 840, 0 )
 
-[node name="UnbreakableWall13" parent="UnbreakablesTop" instance=ExtResource( 1 )]
+[node name="UnbreakableWall13" parent="Static/UnbreakablesTop" instance=ExtResource( 1 )]
 position = Vector2( 900, 0 )
 
-[node name="UnbreakableWall14" parent="UnbreakablesTop" instance=ExtResource( 1 )]
+[node name="UnbreakableWall14" parent="Static/UnbreakablesTop" instance=ExtResource( 1 )]
 position = Vector2( 960, 0 )
 
-[node name="UnbreakableWall15" parent="UnbreakablesTop" instance=ExtResource( 1 )]
+[node name="UnbreakableWall15" parent="Static/UnbreakablesTop" instance=ExtResource( 1 )]
 position = Vector2( 1020, 0 )
 
-[node name="UnbreakableWall16" parent="UnbreakablesTop" instance=ExtResource( 1 )]
+[node name="UnbreakableWall16" parent="Static/UnbreakablesTop" instance=ExtResource( 1 )]
 position = Vector2( 1080, 0 )
 
-[node name="UnbreakableWall17" parent="UnbreakablesTop" instance=ExtResource( 1 )]
+[node name="UnbreakableWall17" parent="Static/UnbreakablesTop" instance=ExtResource( 1 )]
 position = Vector2( 1140, 0 )
 
-[node name="UnbreakableWall18" parent="UnbreakablesTop" instance=ExtResource( 1 )]
+[node name="UnbreakableWall18" parent="Static/UnbreakablesTop" instance=ExtResource( 1 )]
 position = Vector2( 1200, 0 )
 
-[node name="UnbreakableWall19" parent="UnbreakablesTop" instance=ExtResource( 1 )]
+[node name="UnbreakableWall19" parent="Static/UnbreakablesTop" instance=ExtResource( 1 )]
 position = Vector2( 1260, 0 )
 
-[node name="UnbreakableWall20" parent="UnbreakablesTop" instance=ExtResource( 1 )]
+[node name="UnbreakableWall20" parent="Static/UnbreakablesTop" instance=ExtResource( 1 )]
 position = Vector2( 1320, 0 )
 
-[node name="UnbreakablesBottom" type="Node2D" parent="."]
+[node name="UnbreakablesBottom" type="Node2D" parent="Static"]
 position = Vector2( 0, 780 )
 
-[node name="UnbreakableWall01" parent="UnbreakablesBottom" instance=ExtResource( 1 )]
+[node name="UnbreakableWall01" parent="Static/UnbreakablesBottom" instance=ExtResource( 1 )]
 
-[node name="UnbreakableWall02" parent="UnbreakablesBottom" instance=ExtResource( 1 )]
+[node name="UnbreakableWall02" parent="Static/UnbreakablesBottom" instance=ExtResource( 1 )]
 position = Vector2( 60, 0 )
 
-[node name="UnbreakableWall03" parent="UnbreakablesBottom" instance=ExtResource( 1 )]
+[node name="UnbreakableWall03" parent="Static/UnbreakablesBottom" instance=ExtResource( 1 )]
 position = Vector2( 120, 0 )
 
-[node name="UnbreakableWall04" parent="UnbreakablesBottom" instance=ExtResource( 1 )]
+[node name="UnbreakableWall04" parent="Static/UnbreakablesBottom" instance=ExtResource( 1 )]
 position = Vector2( 180, 0 )
 
-[node name="UnbreakableWall05" parent="UnbreakablesBottom" instance=ExtResource( 1 )]
+[node name="UnbreakableWall05" parent="Static/UnbreakablesBottom" instance=ExtResource( 1 )]
 position = Vector2( 240, 0 )
 
-[node name="UnbreakableWall06" parent="UnbreakablesBottom" instance=ExtResource( 1 )]
+[node name="UnbreakableWall06" parent="Static/UnbreakablesBottom" instance=ExtResource( 1 )]
 position = Vector2( 300, 0 )
 
-[node name="UnbreakableWall07" parent="UnbreakablesBottom" instance=ExtResource( 1 )]
+[node name="UnbreakableWall07" parent="Static/UnbreakablesBottom" instance=ExtResource( 1 )]
 position = Vector2( 360, 0 )
 
-[node name="UnbreakableWall08" parent="UnbreakablesBottom" instance=ExtResource( 1 )]
+[node name="UnbreakableWall08" parent="Static/UnbreakablesBottom" instance=ExtResource( 1 )]
 position = Vector2( 420, 0 )
 
-[node name="UnbreakableWall09" parent="UnbreakablesBottom" instance=ExtResource( 1 )]
+[node name="UnbreakableWall09" parent="Static/UnbreakablesBottom" instance=ExtResource( 1 )]
 position = Vector2( 480, 0 )
 
-[node name="UnbreakableWall10" parent="UnbreakablesBottom" instance=ExtResource( 1 )]
+[node name="UnbreakableWall10" parent="Static/UnbreakablesBottom" instance=ExtResource( 1 )]
 position = Vector2( 540, 0 )
 
-[node name="UnbreakableWall11" parent="UnbreakablesBottom" instance=ExtResource( 1 )]
+[node name="UnbreakableWall11" parent="Static/UnbreakablesBottom" instance=ExtResource( 1 )]
 position = Vector2( 600, 0 )
 
-[node name="UnbreakableWall12" parent="UnbreakablesBottom" instance=ExtResource( 1 )]
+[node name="UnbreakableWall12" parent="Static/UnbreakablesBottom" instance=ExtResource( 1 )]
 position = Vector2( 660, 0 )
 
-[node name="UnbreakableWall13" parent="UnbreakablesBottom" instance=ExtResource( 1 )]
+[node name="UnbreakableWall13" parent="Static/UnbreakablesBottom" instance=ExtResource( 1 )]
 position = Vector2( 720, 0 )
 
-[node name="UnbreakableWall14" parent="UnbreakablesBottom" instance=ExtResource( 1 )]
+[node name="UnbreakableWall14" parent="Static/UnbreakablesBottom" instance=ExtResource( 1 )]
 position = Vector2( 780, 0 )
 
-[node name="UnbreakableWall15" parent="UnbreakablesBottom" instance=ExtResource( 1 )]
+[node name="UnbreakableWall15" parent="Static/UnbreakablesBottom" instance=ExtResource( 1 )]
 position = Vector2( 840, 0 )
 
-[node name="UnbreakableWall16" parent="UnbreakablesBottom" instance=ExtResource( 1 )]
+[node name="UnbreakableWall16" parent="Static/UnbreakablesBottom" instance=ExtResource( 1 )]
 position = Vector2( 1080, 0 )
 
-[node name="UnbreakableWall17" parent="UnbreakablesBottom" instance=ExtResource( 1 )]
+[node name="UnbreakableWall17" parent="Static/UnbreakablesBottom" instance=ExtResource( 1 )]
 position = Vector2( 1140, 0 )
 
-[node name="UnbreakableWall18" parent="UnbreakablesBottom" instance=ExtResource( 1 )]
+[node name="UnbreakableWall18" parent="Static/UnbreakablesBottom" instance=ExtResource( 1 )]
 position = Vector2( 1200, 0 )
 
-[node name="UnbreakableWall19" parent="UnbreakablesBottom" instance=ExtResource( 1 )]
+[node name="UnbreakableWall19" parent="Static/UnbreakablesBottom" instance=ExtResource( 1 )]
 position = Vector2( 1260, 0 )
 
-[node name="UnbreakableWall20" parent="UnbreakablesBottom" instance=ExtResource( 1 )]
+[node name="UnbreakableWall20" parent="Static/UnbreakablesBottom" instance=ExtResource( 1 )]
 position = Vector2( 1320, 0 )
 
-[node name="Breakables" type="Node2D" parent="."]
+[node name="Breakables" type="Node2D" parent="Static"]
 position = Vector2( 180, 0 )
 
-[node name="BreakableWall01" parent="Breakables" instance=ExtResource( 2 )]
+[node name="BreakableWall01" parent="Static/Breakables" instance=ExtResource( 2 )]
 position = Vector2( 120, 0 )
 
-[node name="BreakableWall02" parent="Breakables" instance=ExtResource( 2 )]
+[node name="BreakableWall02" parent="Static/Breakables" instance=ExtResource( 2 )]
 position = Vector2( 180, 0 )
 
-[node name="BreakableWall03" parent="Breakables" instance=ExtResource( 2 )]
+[node name="BreakableWall03" parent="Static/Breakables" instance=ExtResource( 2 )]
 position = Vector2( 240, 0 )
 
-[node name="BreakableWall04" parent="Breakables" instance=ExtResource( 2 )]
+[node name="BreakableWall04" parent="Static/Breakables" instance=ExtResource( 2 )]
 position = Vector2( 720, 780 )
 
-[node name="BreakableWall05" parent="Breakables" instance=ExtResource( 2 )]
+[node name="BreakableWall05" parent="Static/Breakables" instance=ExtResource( 2 )]
 position = Vector2( 780, 780 )
 
-[node name="BreakableWall06" parent="Breakables" instance=ExtResource( 2 )]
+[node name="BreakableWall06" parent="Static/Breakables" instance=ExtResource( 2 )]
 position = Vector2( 840, 780 )
