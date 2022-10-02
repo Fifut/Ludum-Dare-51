@@ -6,7 +6,7 @@ onready var ClockHandSprite = $"%ClockHandSprite"
 
 
 func _process(_delta):
-	ClockHandSprite.rotation_degrees = range_lerp(TenSecondsTimer.time_left, 10, 0, 0, 360)
+	ClockHandSprite.rotation_degrees = range_lerp(TenSecondsTimer.time_left, 10, 0, 0, 360) + 200
 
 
 func _on_TenSecondsTimer_timeout():
