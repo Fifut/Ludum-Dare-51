@@ -8,11 +8,12 @@ func _process(_delta):
 	
 	if body != null:
 		
-		if Input.is_action_just_released("grab") and body.has_method("grab"):
-			var picked = body.grab(name)
-			
-			if picked:
-				queue_free()
+		if body.has_method("grab"):
+			if Inputs.is_action_just_pressed("grab") :
+				var picked = body.grab(name)
+				
+				if picked:
+					queue_free()
 
 
 func _on_PickableArea_body_entered(_body):

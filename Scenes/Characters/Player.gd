@@ -19,6 +19,7 @@ var velocity = Vector2.ZERO
 var grabbed_item = ""
 
 
+
 func _ready():
 	Dirt.hide()
 
@@ -38,14 +39,16 @@ func _interacte():
 		AnimationPlayer.play("Interact")
 
 
-	if Input.is_action_just_pressed("grab") and grabbed_item != "":
-		AnimationPlayer.play_backwards("Carry")
-		var dirt = Dirt_scene.instance()
-		dirt.name = grabbed_item
-		dirt.position = position + Vector2(80,0).rotated(rotation)
-		dirt.add_to_group("Dirt")
-		get_parent().add_child(dirt)
-		grabbed_item = ""
+	if grabbed_item != "":
+		if Inputs.is_action_just_pressed("grab") :
+			AnimationPlayer.play_backwards("Carry")
+			var dirt = Dirt_scene.instance()
+			dirt.name = grabbed_item
+			dirt.position = position + Vector2(80,0).rotated(rotation)
+			dirt.add_to_group("Dirt")
+			get_parent().add_child(dirt)
+			grabbed_item = ""
+
 
 
 	
