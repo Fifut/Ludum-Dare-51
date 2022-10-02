@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scenes/UI/Win.gd" type="Script" id=1]
 [ext_resource path="res://Fonts/Good brush 100.tres" type="DynamicFont" id=2]
 [ext_resource path="res://Scenes/UI/Inherited/ButtonRestart.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/UI/Inherited/ButtonQuitToMenu.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Fonts/Kalam 60.tres" type="DynamicFont" id=5]
 
 [node name="Win" type="Control"]
 anchor_right = 1.0
@@ -31,10 +32,10 @@ margin_right = -100.0
 margin_bottom = -100.0
 
 [node name="HBoxContainer" type="VBoxContainer" parent="CanvasLayer/CenterContainer"]
-margin_left = 407.0
-margin_top = 193.0
-margin_right = 1023.0
-margin_bottom = 551.0
+margin_left = 304.0
+margin_top = 138.0
+margin_right = 920.0
+margin_bottom = 606.0
 custom_constants/separation = 50
 
 [node name="Title" type="Label" parent="CanvasLayer/CenterContainer/HBoxContainer"]
@@ -44,19 +45,43 @@ custom_colors/font_color = Color( 0, 1, 0, 1 )
 custom_fonts/font = ExtResource( 2 )
 text = "You are free !"
 
-[node name="Restart" parent="CanvasLayer/CenterContainer/HBoxContainer" instance=ExtResource( 3 )]
-modulate = Color( 1, 1, 0.721569, 1 )
-margin_left = 180.0
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/CenterContainer/HBoxContainer"]
+margin_left = 9.0
 margin_top = 172.0
+margin_right = 606.0
+margin_bottom = 232.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+custom_constants/separation = 30
+
+[node name="Score" type="Label" parent="CanvasLayer/CenterContainer/HBoxContainer/HBoxContainer"]
+margin_right = 513.0
+margin_bottom = 60.0
+custom_fonts/font = ExtResource( 5 )
+text = "Score (less is best) :"
+align = 2
+valign = 1
+
+[node name="Value" type="Label" parent="CanvasLayer/CenterContainer/HBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+margin_left = 543.0
+margin_right = 597.0
+margin_bottom = 60.0
+custom_fonts/font = ExtResource( 5 )
+text = "00"
+valign = 1
+
+[node name="Restart" parent="CanvasLayer/CenterContainer/HBoxContainer" instance=ExtResource( 3 )]
+margin_left = 180.0
+margin_top = 282.0
 margin_right = 435.0
-margin_bottom = 240.0
+margin_bottom = 350.0
 
 [node name="Quit" parent="CanvasLayer/CenterContainer/HBoxContainer" instance=ExtResource( 4 )]
-modulate = Color( 1, 1, 0.721569, 1 )
 margin_left = 180.0
-margin_top = 290.0
+margin_top = 400.0
 margin_right = 435.0
-margin_bottom = 358.0
+margin_bottom = 468.0
 
 [connection signal="pressed" from="CanvasLayer/CenterContainer/HBoxContainer/Restart" to="." method="_on_Restart_pressed"]
 [connection signal="pressed" from="CanvasLayer/CenterContainer/HBoxContainer/Quit" to="." method="_on_Quit_pressed"]

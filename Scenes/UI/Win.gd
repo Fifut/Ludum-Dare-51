@@ -4,13 +4,18 @@ extends Control
 
 
 onready var CanvasLayer = $"%CanvasLayer"
-
+onready var Value = $"%Value"
 
 
 func _process(_delta):
 	
 	if CanvasLayer!= null:
 		CanvasLayer.visible = visible
+
+
+
+func setScore(value):
+	Value.text = str(value)
 
 
 

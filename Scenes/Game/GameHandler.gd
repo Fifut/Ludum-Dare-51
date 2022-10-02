@@ -10,9 +10,8 @@ onready var Music = $"%Music"
 onready var Alarm = $"%Alarm"
 
 
-
 var checking = false
-
+var _guard_round = 0
 
 
 func _ready():
@@ -20,7 +19,8 @@ func _ready():
 	Lose.hide()
 	Win.hide()
 	
-	var _err = Events.connect("on_guard_front_door", self, "jailChecking")
+	var _err = Events.connect("on_guard_front_door", self, "_jailChecking")
+	_err = Events.connect("on_clock_timeout", self, "_guardRound")
 
 
 
@@ -37,9 +37,14 @@ func _process(_delta):
 		yield(get_tree().create_timer(3.0), "timeout")
 		Alarm.stop()
 	
+	
+	
+func _guardRound():
+	_guard_round += 1
 
 
-func jailChecking(status):
+
+func _jailChecking(status):
 	checking = status
 	
 
@@ -47,6 +52,7 @@ func jailChecking(status):
 func _on_Outside_on_EscapeArea_body_entered():
 	
 	Win.show()
+	Win.setScore(_guard_round)
 		
 	Jail.stop()
 	Player.set_process(false)
