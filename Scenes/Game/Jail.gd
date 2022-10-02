@@ -19,7 +19,7 @@ func _ready():
 	
 	
 func _process(delta):
-	PathFollow2D.offset += 00 * delta
+	PathFollow2D.offset += 400 * delta
 
 
 

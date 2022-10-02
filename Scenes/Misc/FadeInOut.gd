@@ -6,7 +6,7 @@ onready var AnimationPlayer = $"%AnimationPlayer"
 onready var CanvasLayer = $"%CanvasLayer"
 
 
-func _process(delta):
+func _process(_delta):
 	CanvasLayer.visible = visible
 
 
