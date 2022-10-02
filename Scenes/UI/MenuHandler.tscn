@@ -316,9 +316,9 @@ align = 1
 valign = 1
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="HowTo/CenterContainer/VBoxContainer"]
-margin_left = 98.0
+margin_left = 103.0
 margin_top = 256.0
-margin_right = 421.0
+margin_right = 417.0
 margin_bottom = 319.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -331,11 +331,11 @@ texture = ExtResource( 20 )
 [node name="HowTo2" type="Label" parent="HowTo/CenterContainer/VBoxContainer/HBoxContainer2"]
 margin_left = 53.0
 margin_top = 16.0
-margin_right = 323.0
+margin_right = 314.0
 margin_bottom = 47.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 2 )
-text = "Left  click to interact"
+text = "Left click to interact"
 align = 1
 valign = 1
 
