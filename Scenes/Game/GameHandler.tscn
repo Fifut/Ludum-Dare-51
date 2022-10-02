@@ -57,15 +57,23 @@ texture = ExtResource( 13 )
 position = Vector2( 1688, 1160 )
 texture = ExtResource( 13 )
 
+[node name="Outside" type="Node2D" parent="."]
+
+[node name="Outside01" parent="Outside" instance=ExtResource( 3 )]
+position = Vector2( -948, 2212 )
+
+[node name="Outside02" parent="Outside" instance=ExtResource( 3 )]
+position = Vector2( 680, 2208 )
+
+[node name="Outside03" parent="Outside" instance=ExtResource( 3 )]
+position = Vector2( 2308, 2204 )
+
 [node name="Jail" parent="." instance=ExtResource( 2 )]
 unique_name_in_owner = true
 position = Vector2( 0, 272 )
 
 [node name="DiggableWalls" parent="." instance=ExtResource( 4 )]
 position = Vector2( 28, 1220 )
-
-[node name="Outside" parent="." instance=ExtResource( 3 )]
-position = Vector2( 812, 2236 )
 
 [node name="Player" parent="." instance=ExtResource( 5 )]
 unique_name_in_owner = true
@@ -103,4 +111,6 @@ autoplay = true
 unique_name_in_owner = true
 stream = ExtResource( 8 )
 
-[connection signal="on_EscapeArea_body_entered" from="Outside" to="." method="_on_Outside_on_EscapeArea_body_entered"]
+[connection signal="on_EscapeArea_body_entered" from="Outside/Outside01" to="." method="_on_Outside_on_EscapeArea_body_entered"]
+[connection signal="on_EscapeArea_body_entered" from="Outside/Outside02" to="." method="_on_Outside_on_EscapeArea_body_entered"]
+[connection signal="on_EscapeArea_body_entered" from="Outside/Outside03" to="." method="_on_Outside_on_EscapeArea_body_entered"]
