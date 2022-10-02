@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scenes/UI/Win.gd" type="Script" id=1]
 [ext_resource path="res://Fonts/Good brush 100.tres" type="DynamicFont" id=2]
 [ext_resource path="res://Scenes/UI/Inherited/ButtonRestart.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/UI/Inherited/ButtonQuitToMenu.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Fonts/Kalam 60.tres" type="DynamicFont" id=5]
+[ext_resource path="res://Assets/Sounds/Win.wav" type="AudioStream" id=6]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Buttons"
@@ -121,6 +122,10 @@ one_shot = true
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 unique_name_in_owner = true
 anims/Buttons = SubResource( 1 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource( 6 )
 
 [connection signal="visibility_changed" from="." to="." method="_on_Win_visibility_changed"]
 [connection signal="pressed" from="CanvasLayer/CenterContainer/HBoxContainer/Restart" to="." method="_on_Restart_pressed"]

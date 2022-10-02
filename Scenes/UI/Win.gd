@@ -9,6 +9,7 @@ onready var AnimationPlayer = $"%AnimationPlayer"
 onready var Restart = $"%Restart"
 onready var Quit = $"%Quit"
 onready var Timer = $"%Timer"
+onready var AudioStreamPlayer = $"%AudioStreamPlayer"
 
 
 
@@ -56,4 +57,5 @@ func _on_Timer_timeout():
 
 func _on_Win_visibility_changed():
 	_initialization()
+	AudioStreamPlayer.play()
 	Timer.start()
