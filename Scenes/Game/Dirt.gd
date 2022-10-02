@@ -41,3 +41,4 @@ func _on_PickableArea_body_entered(_body):
 
 func _on_PickableArea_body_exited(_body):
 	body = null
+

@@ -36,5 +36,7 @@ stream = ExtResource( 3 )
 unique_name_in_owner = true
 stream = ExtResource( 4 )
 
+[connection signal="area_entered" from="PickableArea" to="." method="_on_PickableArea_area_entered"]
+[connection signal="area_exited" from="PickableArea" to="." method="_on_PickableArea_area_exited"]
 [connection signal="body_entered" from="PickableArea" to="." method="_on_PickableArea_body_entered"]
 [connection signal="body_exited" from="PickableArea" to="." method="_on_PickableArea_body_exited"]
