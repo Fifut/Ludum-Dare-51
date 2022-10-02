@@ -1,7 +1,15 @@
 extends StaticBody2D
 
 
+onready var Pickup = $"%Pickup"
+onready var Drop = $"%Drop"
+
+
 var body
+
+
+func _ready():
+	Drop.play()
 
 
 func _process(_delta):
@@ -13,7 +21,18 @@ func _process(_delta):
 				var picked = body.grab(name)
 				
 				if picked:
+					playPickup()
+					hide()
+					yield(Pickup, "finished")
 					queue_free()
+
+
+func playPickup():
+	Pickup.play()
+
+
+func playDrop():
+	Drop.play()
 
 
 func _on_PickableArea_body_entered(_body):
