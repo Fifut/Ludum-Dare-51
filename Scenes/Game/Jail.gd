@@ -34,8 +34,9 @@ func stop():
 
 func isOkForChecking():
 	
-	for body in JailArea.get_overlapping_bodies():
-		if body.is_in_group("Dirt"):
+
+	for area in JailArea.get_overlapping_areas() :
+		if area.is_in_group("Dirt"):
 			return false
 			
 	for body in JailArea.get_overlapping_bodies():
