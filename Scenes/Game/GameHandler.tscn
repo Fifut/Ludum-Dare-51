@@ -161,6 +161,7 @@ margin_right = 136.0
 margin_bottom = 1244.0
 
 [node name="FadeInOut" parent="." instance=ExtResource( 16 )]
+visible = false
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
