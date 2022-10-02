@@ -34,8 +34,6 @@ func _process(_delta):
 		
 		Music.stop()
 		Alarm.play()
-		yield(get_tree().create_timer(3.0), "timeout")
-		Alarm.stop()
 	
 	
 	

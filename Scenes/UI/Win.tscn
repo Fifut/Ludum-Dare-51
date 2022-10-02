@@ -1,10 +1,37 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scenes/UI/Win.gd" type="Script" id=1]
 [ext_resource path="res://Fonts/Good brush 100.tres" type="DynamicFont" id=2]
 [ext_resource path="res://Scenes/UI/Inherited/ButtonRestart.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/UI/Inherited/ButtonQuitToMenu.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Fonts/Kalam 60.tres" type="DynamicFont" id=5]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Buttons"
+tracks/0/type = "value"
+tracks/0/path = NodePath("CanvasLayer/CenterContainer/HBoxContainer/Restart:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 0.721569, 0 ), Color( 1, 1, 0.721569, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CanvasLayer/CenterContainer/HBoxContainer/Quit:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 0.721569, 0 ), Color( 1, 1, 0.721569, 1 ) ]
+}
 
 [node name="Win" type="Control"]
 anchor_right = 1.0
@@ -72,16 +99,30 @@ text = "00"
 valign = 1
 
 [node name="Restart" parent="CanvasLayer/CenterContainer/HBoxContainer" instance=ExtResource( 3 )]
+unique_name_in_owner = true
+modulate = Color( 1, 1, 0.721569, 0 )
 margin_left = 180.0
 margin_top = 282.0
 margin_right = 435.0
 margin_bottom = 350.0
 
 [node name="Quit" parent="CanvasLayer/CenterContainer/HBoxContainer" instance=ExtResource( 4 )]
+unique_name_in_owner = true
+modulate = Color( 1, 1, 0.721569, 0 )
 margin_left = 180.0
 margin_top = 400.0
 margin_right = 435.0
 margin_bottom = 468.0
 
+[node name="Timer" type="Timer" parent="."]
+unique_name_in_owner = true
+one_shot = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+anims/Buttons = SubResource( 1 )
+
+[connection signal="visibility_changed" from="." to="." method="_on_Win_visibility_changed"]
 [connection signal="pressed" from="CanvasLayer/CenterContainer/HBoxContainer/Restart" to="." method="_on_Restart_pressed"]
 [connection signal="pressed" from="CanvasLayer/CenterContainer/HBoxContainer/Quit" to="." method="_on_Quit_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
