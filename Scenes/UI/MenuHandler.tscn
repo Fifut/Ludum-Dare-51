@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Assets/Textures/Paper small.jpg" type="Texture" id=1]
 [ext_resource path="res://Fonts/Kalam 30.tres" type="DynamicFont" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://Scenes/UI/Inherited/ButtonBack.tscn" type="PackedScene" id=11]
 [ext_resource path="res://icon.png" type="Texture" id=12]
 [ext_resource path="res://Fonts/Kalam 20.tres" type="DynamicFont" id=13]
+[ext_resource path="res://Scenes/Characters/PlayerMenu.tscn" type="PackedScene" id=14]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Attract"
@@ -130,6 +131,9 @@ unique_name_in_owner = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 rect_pivot_offset = Vector2( 712, 472 )
+
+[node name="PlayerMenu" parent="Main" instance=ExtResource( 14 )]
+position = Vector2( 1274, 815 )
 
 [node name="Made" type="Control" parent="Main"]
 anchor_right = 1.0
@@ -281,6 +285,7 @@ stream = ExtResource( 8 )
 autoplay = true
 
 [node name="FadeInOut" parent="." instance=ExtResource( 3 )]
+visible = false
 
 [node name="Camera2D" type="Camera2D" parent="."]
 unique_name_in_owner = true
