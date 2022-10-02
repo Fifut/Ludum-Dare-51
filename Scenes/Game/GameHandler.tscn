@@ -139,6 +139,7 @@ unique_name_in_owner = true
 position = Vector2( 724, 508 )
 
 [node name="HUD" parent="." instance=ExtResource( 6 )]
+unique_name_in_owner = true
 margin_left = 80.0
 margin_top = 152.0
 margin_right = 80.0

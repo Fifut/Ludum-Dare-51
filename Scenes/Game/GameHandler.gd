@@ -8,10 +8,11 @@ onready var Lose = $"%Lose"
 onready var Win = $"%Win"
 onready var Music = $"%Music"
 onready var Alarm = $"%Alarm"
+onready var HUD = $"%HUD"
 
 
 var checking = false
-var _guard_round = 0
+var _guard_round = 1
 
 
 func _ready():
@@ -39,6 +40,7 @@ func _process(_delta):
 	
 func _guardRound():
 	_guard_round += 1
+	HUD.setGuardsRounds(_guard_round)
 
 
 
