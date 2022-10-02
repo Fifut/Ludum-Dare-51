@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Assets/Textures/Paper.jpg" type="Texture" id=1]
 [ext_resource path="res://Scenes/Game/Jail.tscn" type="PackedScene" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://Assets/Textures/Shelf.png" type="Texture" id=13]
 [ext_resource path="res://Assets/Textures/Walls/Breakable01.png" type="Texture" id=14]
 [ext_resource path="res://Assets/Textures/Toilet.png" type="Texture" id=15]
+[ext_resource path="res://Scenes/Misc/FadeInOut.tscn" type="PackedScene" id=16]
 
 [node name="GameHandler" type="Node2D"]
 script = ExtResource( 7 )
@@ -158,6 +159,8 @@ margin_left = 136.0
 margin_top = 1244.0
 margin_right = 136.0
 margin_bottom = 1244.0
+
+[node name="FadeInOut" parent="." instance=ExtResource( 16 )]
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
