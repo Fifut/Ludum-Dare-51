@@ -34,7 +34,6 @@ func stop():
 
 func isOkForChecking():
 	
-
 	for area in JailArea.get_overlapping_areas() :
 		if area.is_in_group("Dirt"):
 			return false
